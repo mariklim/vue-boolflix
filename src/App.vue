@@ -1,10 +1,7 @@
 <template>
   <div id="app">
-    <Header
-    @search="searchFilm"
-    />
-    <Main
-    :infoFilm = "inputText"/>
+    <Header @search="searchFilm" />
+    <Main :infoFilm="inputText" />
   </div>
 </template>
 
@@ -21,7 +18,7 @@ export default {
   },
   data() {
 		return {
-			inputText: ""
+			inputText:"",
 		}
 	},
   methods: {

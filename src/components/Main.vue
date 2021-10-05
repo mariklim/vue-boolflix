@@ -1,5 +1,7 @@
 <template>
-  <section></section>
+  <section>
+        
+  </section>
 </template>
 
 <script>
@@ -8,6 +10,11 @@ export default {
   name: "Main",
   props: {
     infoFilm: String,
+  },
+   data() {
+    return {
+      allFilms:[],
+    };
   },
   created() {
     axios
@@ -18,8 +25,10 @@ export default {
           language: 'it-IT',
         },
       })
-      .then(function (response) {
-        console.log(response);
+      .then((response) => {
+        console.log(response.data.results);
+        this.allFilms = response.data.results;
+        console.log(this.allFilms);
       });
   },
 };
