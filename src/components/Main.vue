@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="cards">
     <filmCard v-for="(film, index) in allFilms" :key="index" :info="film"/>
   </section>
 </template>
@@ -17,5 +17,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

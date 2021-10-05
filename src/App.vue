@@ -24,9 +24,11 @@ export default {
 		}
 	},
   methods: {
+    //Al evento click avvio funzione "searchFilm", che "salva" il valore della input (quello che inserisce utente nella serachbar)
 		searchFilm(text) {
 			this.inputText = text;
       console.log(this.inputText);
+      //al click si avvia la chiamata ad API
       axios
       .get("https://api.themoviedb.org/3/search/movie", {
         params: {
