@@ -1,6 +1,8 @@
 <template>
   <section>
-       <filmCard />
+      <div v-for="(film, index) in allFilms" :key="index">
+      <filmCard :info="film" />
+     </div>
   </section>
 </template>
 

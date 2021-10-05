@@ -1,11 +1,16 @@
 <template>
-<div>ciao</div>
+<div>
+    <p>{{info.title}}</p>
+</div>
   
 </template>
 
 <script>
 export default {
     name: "filmCard",
+    props: {
+        info: Object
+  },
 
 }
 </script>
