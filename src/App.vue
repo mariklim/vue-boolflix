@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <Header/>
-    <Main/>
+    <Header
+    @search="searchFilm"
+    />
+    <Main
+    :infoFilm = "inputText"/>
   </div>
 </template>
 
@@ -15,7 +18,18 @@ export default {
   components: {
     Header,
     Main
-  }
+  },
+  data() {
+		return {
+			inputText: ""
+		}
+	},
+  methods: {
+		searchFilm(text) {
+			this.inputText = text;
+      console.log(this.inputText)
+		}
+	},
 }
 </script>
 
