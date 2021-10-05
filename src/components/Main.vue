@@ -1,6 +1,11 @@
 <template>
   <section class="cards">
-    <filmCard v-for="(film, index) in allFilms" :key="index" :info="film"/>
+    <!-- ciclo su array che è arrivato dalla App -->
+    <div v-for="(film, index) in allFilms" :key="index">
+      
+      <!-- creo prop per madare a filmCard info sui film, (un film - un oggetto con i dati) -->
+    <filmCard :info="film"/>
+    </div>
   </section>
 </template>
 
@@ -12,6 +17,7 @@ export default {
     filmCard,
   },
   props: {
+    //  è arrivato dalla App
     allFilms: Array,
   },
 };
