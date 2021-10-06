@@ -2,21 +2,18 @@
   <div>
     <!-- "info" è un singolo oggetto della array con i film, contiene tante info che ci servono -->
     <div class="card">
-        <h2>Titolo originale: {{ info.original_title }}</h2>
-        <h3>Titolo: {{ info.title }}</h3>
+        <h2 v-if="info.original_title">Titolo originale: {{ info.original_title }}
+        </h2>
+         <h2 v-else> Titolo originale: {{info.original_name }}
+        </h2>
+         <h2 v-if="info.title">Titolo: {{ info.title }}
+        </h2>
+         <h2 v-else> Titolo: {{info.name }}
+        </h2>
         <h4>Voto: {{ info.vote_average }}</h4>
         <h4>Lingua: </h4>
         <lang-flag :iso="info.original_language" />
     </div>
-
-    <div class="card">
-        <h2>Titolo originale: {{ infoTV.original_name }}</h2>
-        <h3>Titolo: {{ infoTV.name }}</h3>
-        <h4>Voto: {{ infoTV.vote_average }}</h4>
-        <h4>Lingua: </h4>
-        <lang-flag :iso="infoTV.original_language" />
-    </div>
-    
   </div>
   
 </template>
@@ -31,7 +28,6 @@ export default {
   // è arrivato dalla Main
   props: {
     info: Object,
-    infoTV: Object,
   },
 };
 </script>

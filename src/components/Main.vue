@@ -10,7 +10,7 @@
    <h2>SERIE TV</h2>
     <ul>
       <li v-for="(serie, index) in allSeriesTv" :key="index">
-            <filmCard :infoTV="serie"/>
+            <filmCard :info="serie"/>
       </li>
     </ul>
       <!-- creo prop per madare a filmCard info sui film, (un film - un oggetto con i dati) -->
