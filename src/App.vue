@@ -7,7 +7,6 @@
     <Main 
     :allFilms="allFilms" 
     :allSeriesTv="allSeriesTv"
-    
     />
   </div>
 </template>

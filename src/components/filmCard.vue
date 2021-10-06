@@ -13,10 +13,11 @@
         <h4>Voto: {{ info.vote_average }}</h4>
         <h4>Lingua: </h4>
         <lang-flag :iso="info.original_language" />
+        <img :src="(`https://image.tmdb.org/t/p/w342/${ info.poster_path }`)" alt="">
     </div>
   </div>
   
-</template>
+</template> 
 
 <script>
 import LangFlag from "vue-lang-code-flags";
