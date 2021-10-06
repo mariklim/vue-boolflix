@@ -3,8 +3,12 @@
     <!-- App "ascolta" un evento click del bottone della serjbar e quando "lo sente" fa partire il metodo "searchFilm" -->
     <Header @search="searchFilm" />
 
-    <!-- passo dati della array nel componente Main -->
-    <Main :allFilms="allFilms" />
+    <!-- passo dati delle array nel componente Main -->
+    <Main 
+    :allFilms="allFilms" 
+    :allSeriesTv="allSeriesTv"
+    
+    />
   </div>
 </template>
 
@@ -31,7 +35,7 @@ export default {
     searchFilm(inputText) {
       console.log(inputText);
       //al click si avvia la chiamata ad API e cambia il contenuto del Array allFilms secondo al valore della Query (che prende valore della input, quindi è dinamica, non serve fare un ulteriore filtro)
-      
+
         // API FILMS
       axios
         .get("https://api.themoviedb.org/3/search/movie", {
@@ -43,6 +47,12 @@ export default {
             language: "it-IT",
           },
         })
+        
+        .then((response) => {
+          this.allFilms = response.data.results;
+          console.log(this.allFilms)
+        
+        });
 
         // API SERIE TV
         axios
@@ -57,14 +67,11 @@ export default {
         })
 
         .then((response) => {
-          console.log(response.data.results);
-          //assegno direttamente all array tutto il contenuto da API, non serve fare il filtro
-          this.allFilms = response.data.results;
-          // console.log(this.allFilms);
-
           this.allSeriesTv = response.data.results;
-          console.log(this.allSeriesTv);
+          console.log(  this.allSeriesTv)
+        
         });
+        
     },
   },
 };

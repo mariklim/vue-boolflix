@@ -1,13 +1,24 @@
 <template>
-  <div class="card">
+  <div>
     <!-- "info" è un singolo oggetto della array con i film, contiene tante info che ci servono -->
+    <div class="card">
+        <h2>Titolo originale: {{ info.original_title }}</h2>
+        <h3>Titolo: {{ info.title }}</h3>
+        <h4>Voto: {{ info.vote_average }}</h4>
+        <h4>Lingua: </h4>
+        <lang-flag :iso="info.original_language" />
+    </div>
 
-    <h2>Titolo originale: {{ info.original_title }}</h2>
-    <h3>Titolo: {{ info.title }}</h3>
-    <h4>Voto: {{ info.vote_average }}</h4>
-    <h4>Lingua: {{ info.original_language }}</h4>
-    <lang-flag :iso="info.original_language" />
+    <div class="card">
+        <h2>Titolo originale: {{ infoTV.original_name }}</h2>
+        <h3>Titolo: {{ infoTV.name }}</h3>
+        <h4>Voto: {{ infoTV.vote_average }}</h4>
+        <h4>Lingua: </h4>
+        <lang-flag :iso="infoTV.original_language" />
+    </div>
+    
   </div>
+  
 </template>
 
 <script>
@@ -17,9 +28,10 @@ export default {
   components: {
     LangFlag,
   },
-  // è arrivato della Main
+  // è arrivato dalla Main
   props: {
     info: Object,
+    infoTV: Object,
   },
 };
 </script>
