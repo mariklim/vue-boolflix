@@ -31,7 +31,7 @@ export default {
     //Al evento click avvio funzione "searchFilm", che "salva" il valore della input (quello che inserisce utente nella serachbar)
 		searchFilm(text) {
 			this.inputText = text;
-      console.log(this.inputText);
+      console.log(text);
       //al click si avvia la chiamata ad API e cambia il contenuto del Array allFilms secondo al valore della Query (che prende valore della input, quindi è dinamica, non serve fare un ulteriore filtro)
       axios
       .get("https://api.themoviedb.org/3/search/movie", {
@@ -39,7 +39,7 @@ export default {
           api_key: "49c4ea87380c56e0d9c16d3ec78d73d7",
           
           //faccio queri dinamica, il suo valore è quello che scrive utente nel input della searchbar
-          query: this.inputText,
+          query: text,
           language: "it-IT",
         },
       })

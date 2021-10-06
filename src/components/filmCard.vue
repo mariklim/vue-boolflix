@@ -5,13 +5,19 @@
     <p>Titolo originale: {{info.original_title}}</p>
      <p>Voto: {{info.vote_average}}</p>
      <p>Lingua: {{info.original_language}}</p>
+        <lang-flag :iso='info.original_language'/>
+ 
 </div>
   
 </template>
 
 <script>
+import LangFlag from 'vue-lang-code-flags'
 export default {
     name: "filmCard",
+    components: {
+        LangFlag
+    },
     // è arrivato della Main
     props: {
         info: Object
@@ -23,7 +29,6 @@ export default {
 <style lang="scss">
 .card{
     color: rgb(15, 13, 13);
-    background-color: rgb(136, 219, 161);
     border: 1px solid gray;
 }
 
