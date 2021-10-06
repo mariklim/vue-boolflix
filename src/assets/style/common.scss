@@ -1,1 +1,17 @@
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "./variables.scss";
+//reset
+*{
+    box-sizing: border-box;
+    margin: auto;
+    padding: auto;
+}
+
+//body
+body{
+    background-color: $Bg_body;  
+}
+
+//Header
+header{
+    background-color: $Bg_header;
+}

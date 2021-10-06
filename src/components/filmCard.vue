@@ -2,6 +2,8 @@
   <div>
     <!-- "info" è un singolo oggetto della array con i film, contiene tante info che ci servono -->
     <div class="card">
+        <h2 v-if="info.original_title"> FILM</h2>
+        <h2 v-else>SERIE TV</h2>
         <h2 v-if="info.original_title">
             Titolo originale: {{ info.original_title }}
         </h2>

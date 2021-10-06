@@ -1,14 +1,11 @@
 <template>
   <section class="cards">
     <!-- ciclo su array che è arrivato dalla App -->
-    <h2>FILMS</h2>
     <ul>
       <li v-for="(film, index) in allFilms" :key="index">
             <filmCard :info="film"/>
       </li>
     </ul>
-   <h2>SERIE TV</h2>
-   <i class="fas fa-star"></i>
     <ul>
       <li v-for="(serie, index) in allSeriesTv" :key="index">
             <filmCard :info="serie"/>
@@ -35,6 +32,12 @@ export default {
 
 <style lang="scss">
 @import "../assets/style/common";
+section{
+  margin-top: 4.375rem;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
 .cards{
     ul{
       list-style: none;
