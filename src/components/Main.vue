@@ -1,11 +1,12 @@
 <template>
   <section class="cards">
     <!-- ciclo su array che è arrivato dalla App -->
-    <div v-for="(film, index) in allFilms" :key="index">
-      
+    <ul>
+      <li v-for="(film, index) in allFilms" :key="index">
+            <filmCard :info="film"/>
+      </li>
+    </ul>
       <!-- creo prop per madare a filmCard info sui film, (un film - un oggetto con i dati) -->
-    <filmCard :info="film"/>
-    </div>
   </section>
 </template>
 
@@ -27,5 +28,8 @@ export default {
 .cards{
   display: flex;
   flex-wrap: wrap;
+    ul{
+      list-style: none;
+    }
 }
 </style>
