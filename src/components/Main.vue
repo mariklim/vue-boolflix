@@ -8,6 +8,7 @@
       </li>
     </ul>
    <h2>SERIE TV</h2>
+   <i class="fas fa-star"></i>
     <ul>
       <li v-for="(serie, index) in allSeriesTv" :key="index">
             <filmCard :info="serie"/>
@@ -33,6 +34,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/style/common";
 .cards{
     ul{
       list-style: none;
