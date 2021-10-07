@@ -1,40 +1,40 @@
 <template>
   
     <!-- "info" è un singolo oggetto della array con i film, contiene tante info che ci servono -->
-    <div class="card">
-      <!-- Titolo categotia -->
-      <!-- <h2 v-if="info.original_title">FILM</h2>
-      <h2 v-else>SERIE TV</h2> -->
-      <!-- /Titolo categotia -->
-
-      <!-- Info sui Film e Serie -->
-      <!-- <h2 v-if="info.original_title">
-        Titolo originale: {{ info.original_title }}
-      </h2>
-      <h2 v-else>Titolo originale: {{ info.original_name }}</h2>
-
-      <h2 v-if="info.title">Titolo: {{ info.title }}</h2>
-      <h2 v-else>Titolo: {{ info.name }}</h2> -->
-      <!-- /Info sui Film e Serie -->
-
-      <!-- Voto -->
-      <!-- <span class="stars" v-for="n in votoCalc" :key="n">
-        <i class="fas fa-star"></i>
-      </span>
-
-      <span class="starsEmpty" v-for="n in 5 - votoCalc" :key="n">
-        <i class="far fa-star"></i>
-      </span> -->
-      <!-- /Voto -->
-      <!--Lingua e Poster -->
+    <div class="card">  
+      <!--Poster -->
       <div class="card-img">
         <img v-if="info.poster_path == null" :src="require(`../assets/image/netflix.jpg`)" alt="netflix">
          <img v-else
         :src="`https://image.tmdb.org/t/p/w200/${info.poster_path}`" alt=""/>
       </div>
-         <h4>Lingua:</h4>
+        <div class="info-card">
+         <h3 v-if="info.original_title">
+        Titolo originale: {{ info.original_title }}
+      </h3>
+      <h3 v-else>Titolo originale: {{ info.original_name }}</h3>
+
+      <h3 v-if="info.title">Titolo: {{ info.title }}</h3>
+      <h3 v-else>Titolo: {{ info.name }}</h3>
+      <!-- /Info sui Film e Serie -->
+
+      <!-- Voto -->
+      <span class="stars" v-for="n in votoCalc" :key="n">
+        <i class="fas fa-star"></i>
+      </span>
+
+      <span class="starsEmpty" v-for="numero in 5 - votoCalc" :key="numero">
+        <i class="far fa-star"></i>
+      </span>
+      <!-- /Voto -->
+
+      <h4>Lingua:</h4>
       <lang-flag :iso="info.original_language" />
-      <!--/Lingua e Poster -->
+
+      </div>
+      <!-- Info sui Film e Serie -->
+      
+      <!--/Poster -->
     </div>
 
 </template> 
@@ -75,5 +75,16 @@ export default {
        width: 100%;
      }
   }
+  .info-card{
+    font-size: .9375rem;
+    border: 1px solid white;
+    width: 11.25rem;
+    height: 15.625rem;
+    padding: 1.25rem;
+  }
 }
+.card-img:hover .info-card{
+background-color: magenta;
+}
+
 </style>
