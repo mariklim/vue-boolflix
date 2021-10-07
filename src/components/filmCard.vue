@@ -70,7 +70,6 @@ export default {
 .card {
   color: rgb(255, 255, 255);
   & i {
-    display: inline-block;
     color: gold;
   }
   .card-img {
@@ -87,8 +86,13 @@ export default {
     width: 11.25rem;
     height: 15.625rem;
     padding: 1.25rem;
+    display: none;
   }
 }
+.card-img:hover .info-card{
+  display: inline-block;
+} 
+
 .card-img:hover img {
   display: none;
 }
