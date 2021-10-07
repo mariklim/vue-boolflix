@@ -1,34 +1,40 @@
 <template>
-  <div>
+  
     <!-- "info" è un singolo oggetto della array con i film, contiene tante info che ci servono -->
     <div class="card">
-        <h2 v-if="info.original_title"> FILM</h2>
-        <h2 v-else>SERIE TV</h2>
+      <!-- Titolo categotia -->
+      <!-- <h2 v-if="info.original_title">FILM</h2>
+      <h2 v-else>SERIE TV</h2> -->
+      <!-- /Titolo categotia -->
 
-        <h2 v-if="info.original_title">
-            Titolo originale: {{ info.original_title }}
-        </h2>
-        <h2 v-else>Titolo originale: {{ info.original_name }}</h2>
+      <!-- Info sui Film e Serie -->
+      <!-- <h2 v-if="info.original_title">
+        Titolo originale: {{ info.original_title }}
+      </h2>
+      <h2 v-else>Titolo originale: {{ info.original_name }}</h2>
 
-        <h2 v-if="info.title">Titolo: {{ info.title }}</h2>
-        <h2 v-else>Titolo: {{ info.name }}</h2>
-        
-        <span class="stars" v-for="n in votoCalc" :key="n">
-            <i class="fas fa-star"></i>
-            </span>
+      <h2 v-if="info.title">Titolo: {{ info.title }}</h2>
+      <h2 v-else>Titolo: {{ info.name }}</h2> -->
+      <!-- /Info sui Film e Serie -->
 
-         <span class="starsEmpty" v-for="n in 5-votoCalc" :key="n">
-            <i class="far fa-star"></i>
-            </span>
+      <!-- Voto -->
+      <!-- <span class="stars" v-for="n in votoCalc" :key="n">
+        <i class="fas fa-star"></i>
+      </span>
 
-        <h4>Lingua:</h4>
-        <lang-flag :iso="info.original_language" />
-        <img
-            :src="`https://image.tmdb.org/t/p/w342/${info.poster_path}`"
-            alt=""
-        />
+      <span class="starsEmpty" v-for="n in 5 - votoCalc" :key="n">
+        <i class="far fa-star"></i>
+      </span> -->
+      <!-- /Voto -->
+      <!--Lingua e Poster -->
+      <img
+        :src="`https://image.tmdb.org/t/p/w200/${info.poster_path}`"
+        alt=""/>
+         <h4>Lingua:</h4>
+      <lang-flag :iso="info.original_language" />
+      <!--/Lingua e Poster -->
     </div>
-  </div>
+
 </template> 
 
 <script>
@@ -47,7 +53,6 @@ export default {
       votoCalc: parseInt(this.info.vote_average / 2),
     };
   },
-  
 };
 </script>
 
@@ -55,11 +60,10 @@ export default {
 <style lang="scss">
 @import "../assets/style/common";
 .card {
-  color: rgb(15, 13, 13);
-  border: 1px solid gray;
-    & i{
-        display: inline-block;
-        color: gold;
-    }
+  color: rgb(255, 255, 255);
+  & i {
+    display: inline-block;
+    color: gold;
+  }
 }
 </style>

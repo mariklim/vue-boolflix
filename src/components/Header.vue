@@ -1,26 +1,26 @@
 <template>
   <header>
-    <div class="logo">
-      <img
-        src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
-        alt="logo"
-      />
-    </div>
-
-    <div class="nav">
-      <div class="searchbar">
-        <i class="fas fa-search"></i>
-        <input
-          type="text"
-          v-model="inputText"
-          placeholder="Filtra per titolo"
+      <div class="logo">
+        <img
+          src="https://image.tmdb.org/t/p/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
+          alt="logo"
         />
-        <!-- al click mando dati della input al padre App -->
       </div>
-      <button type="submit" @click.prevent="$emit('search', inputText)">
-        Search
-      </button>
-    </div>
+
+      <div class="nav">
+        <div class="searchbar">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            v-model="inputText"
+            placeholder="Filtra per titolo"
+          />
+          <!-- al click mando dati della input al padre App -->
+        </div>
+        <button type="submit" @click.prevent="$emit('search', inputText)">
+          Search
+        </button>
+      </div>
   </header>
 </template>
 
@@ -45,7 +45,6 @@ header {
   top: 0;
   width: 100%;
 }
-
 .logo {
   width: 5.625rem;
   img {
@@ -85,10 +84,10 @@ header {
       color: white;
       border: 0;
 
-        &:focus {
-          outline: none;
-        }
+      &:focus {
+        outline: none;
+      }
     }
-    }
+  }
 }
 </style>
