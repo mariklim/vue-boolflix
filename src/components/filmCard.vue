@@ -4,15 +4,23 @@
     <div class="card">
         <h2 v-if="info.original_title"> FILM</h2>
         <h2 v-else>SERIE TV</h2>
+
         <h2 v-if="info.original_title">
             Titolo originale: {{ info.original_title }}
         </h2>
         <h2 v-else>Titolo originale: {{ info.original_name }}</h2>
+
         <h2 v-if="info.title">Titolo: {{ info.title }}</h2>
         <h2 v-else>Titolo: {{ info.name }}</h2>
+        
         <span class="stars" v-for="n in votoCalc" :key="n">
             <i class="fas fa-star"></i>
             </span>
+
+         <span class="starsEmpty" v-for="n in 5-votoCalc" :key="n">
+            <i class="far fa-star"></i>
+            </span>
+
         <h4>Lingua:</h4>
         <lang-flag :iso="info.original_language" />
         <img

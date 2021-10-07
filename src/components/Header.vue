@@ -9,12 +9,17 @@
 
     <div class="nav">
       <div class="searchbar">
-        <input type="text" v-model="inputText" placeholder="cerca film e serial TV" />
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          v-model="inputText"
+          placeholder="Filtra per titolo"
+        />
         <!-- al click mando dati della input al padre App -->
-        <button type="submit" @click.prevent="$emit('search', inputText)">
-          Search
-        </button>
       </div>
+      <button type="submit" @click.prevent="$emit('search', inputText)">
+        Search
+      </button>
     </div>
   </header>
 </template>
@@ -31,6 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../assets/style/common";
 header {
   display: flex;
   height: 4.375rem;
@@ -41,27 +47,48 @@ header {
 }
 
 .logo {
-  width: 6.25rem;
+  width: 5.625rem;
   img {
     width: 100%;
   }
 }
 
-.nav{
+.nav {
   text-align: right;
   width: 80%;
-    .searchbar{
-      display: inline-block;
+  button {
+    height: 37px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background-color 1s;
+  }
 
-        & input{
-          width: 15.625rem;
-          height: 2.1875rem;
-          margin: 0 .625rem;
-          background-color: black;
-          color: white;
-          border: 1px solid white;
-          border-radius: 0;
+  button:hover {
+    background-color: rgba(134, 134, 134, 0.801);
+  }
+
+  .searchbar {
+    display: inline-block;
+    border: 1px solid white;
+    border-right: 0;
+    color: rgba(255, 255, 255, 0.322);
+    i {
+      padding: 0 0.625rem;
+    }
+
+    & input {
+      width: 15.625rem;
+      height: 2.1875rem;
+      background-color: black;
+      color: white;
+      border: 0;
+
+        &:focus {
+          outline: none;
         }
+    }
     }
 }
 </style>
