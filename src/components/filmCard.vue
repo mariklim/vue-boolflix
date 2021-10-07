@@ -27,9 +27,11 @@
       </span> -->
       <!-- /Voto -->
       <!--Lingua e Poster -->
-      <img
-        :src="`https://image.tmdb.org/t/p/w200/${info.poster_path}`"
-        alt=""/>
+      <div class="card-img">
+        <img v-if="info.poster_path == null" :src="require(`../assets/image/netflix.jpg`)" alt="netflix">
+         <img v-else
+        :src="`https://image.tmdb.org/t/p/w200/${info.poster_path}`" alt=""/>
+      </div>
          <h4>Lingua:</h4>
       <lang-flag :iso="info.original_language" />
       <!--/Lingua e Poster -->
@@ -64,6 +66,14 @@ export default {
   & i {
     display: inline-block;
     color: gold;
+  }
+  .card-img{
+    width: 11.25rem;
+    height: 15.625rem;
+    overflow: hidden;
+     img{
+       width: 100%;
+     }
   }
 }
 </style>

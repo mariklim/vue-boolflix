@@ -46,11 +46,11 @@ section {
   scroll-behavior: smooth;
 }
 .cards {
-    h2{
-      padding: .625rem 3.125rem;
-      color: rgba(255, 255, 255, 0.911);
-      font-size: 1.875rem;
-    }
+  h2 {
+    padding: 0.625rem 3.125rem;
+    color: rgba(255, 255, 255, 0.911);
+    font-size: 1.875rem;
+  }
   ul {
     list-style: none;
     display: flex;

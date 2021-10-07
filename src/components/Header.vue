@@ -46,7 +46,7 @@ header {
   width: 100%;
 }
 .logo {
-  width: 5.625rem;
+  width: 80px;
   img {
     width: 100%;
   }
