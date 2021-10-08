@@ -1,4 +1,9 @@
+//Fonts
+@import url('http://fonts.cdnfonts.com/css/netflix-sans');
+
+//Variables
 @import "./variables.scss";
+
 //reset
 *{
     box-sizing: border-box;
@@ -8,7 +13,8 @@
 
 //body
 body{
-    background-color: $Bg_body;  
+    background-color: $Bg_body;
+    font-family: 'Netflix Sans', sans-serif;
 }
 
 //Header

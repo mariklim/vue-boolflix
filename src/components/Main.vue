@@ -40,6 +40,7 @@ export default {
 <style lang="scss">
 @import "../assets/style/common";
 section {
+  padding: 1.25rem;
   margin-top: 4.375rem;
   height: calc(100vh - 70px);
   overflow-y: scroll;
@@ -56,8 +57,8 @@ section {
     display: flex;
     flex-wrap: wrap;
     margin: 1.875rem 0;
-    li {
-      width: calc(100% / 7);
+    li{
+      padding: .3125rem;
     }
   }
 }
