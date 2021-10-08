@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <!-- App "ascolta" un evento click del bottone della serjbar e quando "lo sente" fa partire il metodo "searchFilm" -->
-    <Header @search="searchFilm" />
+    <Header @search="searchFilm"
+    @select="selectGenre"
+    :allGenres="allGenres"
+    />
 
     <!-- passo dati delle array nel componente Main -->
-    <Main :allFilms="allFilms" :allSeriesTv="allSeriesTv" />
+    <Main :allFilms="allFilms" :allSeriesTv="allSeriesTv" :selected="selected" />
   </div>
 </template>
 
@@ -25,9 +28,15 @@ export default {
       allFilms: [],
       allSeriesTv: [],
       allGenres: [],
+      selected: 0,
     };
   },
   methods: {
+    
+		selectGenre(text) {
+			this.selected = text;
+      console.log(this.selected)
+		},
     //Al evento click avvio funzione "searchFilm", che "salva" il valore della input (quello che inserisce utente nella serachbar)
     searchFilm(inputText) {
       console.log(inputText);

@@ -19,6 +19,17 @@
       </ul>
       <!-- creo prop :info per madare a filmCard info sui film, (un film - un oggetto con i dati) -->
     </div>
+
+     <div class="cards">
+      <h2>Film selezionati per genere</h2>
+      <ul>
+        <li v-for="(film, index) in allFilmsFiltered" :key="index">
+          <filmCard :info="film" />
+        </li>
+      </ul>
+      <!-- creo prop :info per madare a filmCard info sui film, (un film - un oggetto con i dati) -->
+    </div>
+    
   </section>
 </template>
 
@@ -33,7 +44,18 @@ export default {
     //  è arrivato dalla App
     allFilms: Array,
     allSeriesTv: Array,
+    selected: Number,
   },
+  computed: {
+		allFilmsFiltered(){
+			const arrFiltered = this.allFilms.filter(
+				(elm) => {
+					return elm.genre_ids.includes(this.selected);
+				}
+			);
+			return arrFiltered;
+		}
+}
 };
 </script>
 

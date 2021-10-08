@@ -8,8 +8,11 @@
       </div>
 
       <div class="nav">
-        <select name="" id="">
-          <option value=""></option>
+        <select name="genres" v-model="selected" @change="$emit('select', selected)">
+          <option value="">Filtra per genere</option>
+          <option v-for="(genre, id) in allGenres" :key="id" :value="genre.id" >
+          {{ genre.name }}
+      </option>
         </select>
 
         <div class="searchbar">
@@ -30,8 +33,13 @@ export default {
   data() {
     return {
       inputText: "",
+      selected: "",
     };
   },
+  props:{
+    allGenres: Array,
+  
+  }
 };
 </script>
 
@@ -69,6 +77,7 @@ header {
   }
 
   .searchbar {
+    margin-left: .625rem;
     display: inline-block;
     border: 1px solid white;
     border-right: 0;
@@ -76,7 +85,7 @@ header {
     i {
       padding: 0 0.625rem;
     }
-
+  
     & input {
       width: 15.625rem;
       height: 2.1875rem;
