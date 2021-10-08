@@ -8,13 +8,13 @@
       </div>
 
       <div class="nav">
+        <select name="" id="">
+          <option value=""></option>
+        </select>
+
         <div class="searchbar">
           <i class="fas fa-search"></i>
-          <input
-            type="text"
-            v-model="inputText"
-            placeholder="Filtra per titolo"
-          />
+          <input type="text" v-model="inputText" placeholder="Filtra per titolo" >
           <!-- al click mando dati della input al padre App -->
         </div>
         <button type="submit" @click.prevent="$emit('search', inputText)">

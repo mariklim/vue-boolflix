@@ -4,10 +4,7 @@
     <Header @search="searchFilm" />
 
     <!-- passo dati delle array nel componente Main -->
-    <Main 
-    :allFilms="allFilms" 
-    :allSeriesTv="allSeriesTv"
-    />
+    <Main :allFilms="allFilms" :allSeriesTv="allSeriesTv" />
   </div>
 </template>
 
@@ -27,6 +24,7 @@ export default {
       //creo variabli vuoti dove salvare dati in arrivo: della input, e da API
       allFilms: [],
       allSeriesTv: [],
+      allGenres: [],
     };
   },
   methods: {
@@ -35,7 +33,7 @@ export default {
       console.log(inputText);
       //al click si avvia la chiamata ad API e cambia il contenuto del Array allFilms secondo al valore della Query (che prende valore della input, quindi è dinamica, non serve fare un ulteriore filtro)
 
-        // API FILMS
+      // API FILMS
       axios
         .get("https://api.themoviedb.org/3/search/movie", {
           params: {
@@ -46,15 +44,14 @@ export default {
             language: "it-IT",
           },
         })
-        
+
         .then((response) => {
           this.allFilms = response.data.results;
-          console.log(this.allFilms)
-        
+          console.log(this.allFilms);
         });
 
-        // API SERIE TV
-        axios
+      // API SERIE TV
+      axios
         .get("https://api.themoviedb.org/3/search/tv", {
           params: {
             api_key: "49c4ea87380c56e0d9c16d3ec78d73d7",
@@ -67,16 +64,27 @@ export default {
 
         .then((response) => {
           this.allSeriesTv = response.data.results;
-          console.log(  this.allSeriesTv)
-        
+          console.log(this.allSeriesTv);
         });
-        
     },
+  },
+  created() {
+    // GENERI
+    axios
+      .get("https://api.themoviedb.org/3/genre/movie/list", {
+        params: {
+          api_key: "49c4ea87380c56e0d9c16d3ec78d73d7",
+          language: "it-IT",
+        },
+      })
+
+      .then((response) => {
+        this.allGenres = response.data.genres;
+      });
   },
 };
 </script>
 
 <style lang="scss">
-@import '~@fortawesome/fontawesome-free/css/all.css';
-
+@import "~@fortawesome/fontawesome-free/css/all.css";
 </style>
