@@ -55,6 +55,7 @@ export default {
   // è arrivato dalla Main
   props: {
     info: Object,
+    infoGenre: Object
   },
   data() {
     return {
