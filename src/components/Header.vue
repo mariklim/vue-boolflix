@@ -8,12 +8,12 @@
       </div>
 
       <div class="nav">
-        <select name="genres" v-model="selected" @change="$emit('select', selected)">
+        <!-- <select name="genres" v-model="selected" @change="$emit('select', selected)">
           <option value="">Filtra per genere</option>
           <option v-for="(genre, id) in allGenres" :key="id" :value="genre.id" >
           {{ genre.name }}
       </option>
-        </select>
+        </select> -->
 
         <div class="searchbar">
           <i class="fas fa-search"></i>

@@ -17,18 +17,18 @@
           <filmCard :info="serie" />
         </li>
       </ul>
-      <!-- creo prop :info per madare a filmCard info sui film, (un film - un oggetto con i dati) -->
+      <!-- creo prop :info per mandare a filmCard info sui film, (un film - un oggetto con i dati) -->
     </div>
 
-     <div class="cards">
-      <h2>Film selezionati per genere</h2>
+     <!-- <div class="cards">
+      <h2>{{ allSeriesTv == 0 ? "" : "Genere" }}</h2>
       <ul>
         <li v-for="(film, index) in allFilmsFiltered" :key="index">
           <filmCard :info="film" />
         </li>
       </ul>
-      <!-- creo prop :info per madare a filmCard info sui film, (un film - un oggetto con i dati) -->
-    </div>
+     
+    </div> -->
     
   </section>
 </template>
